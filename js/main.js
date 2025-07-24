@@ -34,10 +34,18 @@ document.addEventListener("DOMContentLoaded", () => {
       margin: 0.5,
       filename: "resume.pdf",
       image: { type: "jpeg", quality: 1 },
-      html2canvas: { scale: 3, useCORS: true },
+      html2canvas: { scale: 4, useCORS: true, logging: true },
       jsPDF: { unit: "in", format: "a4", orientation: "portrait" },
     };
-
-    html2pdf().from(resume).set(opt).save();
+    html2pdf()
+      .from(resume)
+      .set(opt)
+      .toPdf()
+      .get("pdf")
+      .then(function (pdf) {
+        setTimeout(() => {
+          pdf.save("resume.pdf");
+        }, 500); 
+      })
   };
 });
