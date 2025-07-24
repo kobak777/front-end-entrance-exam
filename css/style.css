@@ -429,18 +429,6 @@ body {
 }
 
 @media (max-width: 768px) {
-  .tools-box__card-container {
-    flex-wrap: nowrap;     
-    justify-content: center; 
-    gap: 15px;
-  }
-  .tools-box__card {
-    flex: 0 0 auto;        
-    width: 100px;         
-  }
-}
-
-@media (max-width: 768px) {
   .row {
     flex-wrap: wrap; 
     gap: 20px;
