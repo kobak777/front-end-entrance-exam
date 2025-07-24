@@ -3,11 +3,223 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.js"></script>
     <title>Vite App</title>
   </head>
   <body>
     <div id="app"></div>
     <script type="module" src="./js/main.js"></script>
+    <main class="main">
+        <div id="resume">
+            <section class="row row--first">
+                <img class="profile__image" src="img/profileImg.png" alt="Аватар">
+                <div class="card name-box ">
+                    <p class="name-box__greeting" data-editable-id="greeting">Hello 👋🏻 I’m</p>
+                    <div class="name-box__info">
+                        <p class="name-box__name" data-editable-id="name">Karthik SR</p>
+                        <p class="name-box__role" data-editable-id="role">UX/UI Designer</p>
+                    </div>
+                </div>
+                <div class="card languages-box">
+                    <p class="title" data-editable-id="title1">Languages</p>
+                    <div class="languages-box__container">
+                        <div class="languages-box__list">
+                            <p class="languages-box__language" data-editable-id="langE">English</p>
+                            <p class="languages-box__language" data-editable-id="langM">Malayalam</p>
+                            <p class="languages-box__language" data-editable-id="langH">Hindi</p>
+                        </div>
+                        <div class="languages-box__list languages-box__bars-column">
+                            <div class="languages-box__bar languages-box__bar--english"></div>
+                            <div class="languages-box__bar languages-box__bar--malayalam"></div>
+                            <div class="languages-box__bar languages-box__bar--hindi"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="row second-row">
+                <div class="card experience-box">
+                    <p class="title" data-editable-id="title2">Experience</p>
+                    <div class="experience-box__job-list">
+                        <div class="experience-box__job experience-box__job--last">
+                            <div class="experience-box__date-row">
+                                <p class="experience-box__date" data-editable-id="date1">Jun. 2023 - Present</p>
+                                <div class="experience-box__most-recent">
+                                    <div class="experience-box__most-recent-text" data-editable-id="most">most recent</div>
+                                </div>
+                            </div>
+                            <div class="experience-box__position-row">
+                                <div class="experience-box__position-info">
+                                    <ul>
+                                        <li class="experience-box__position" data-editable-id="pos1">Marketing Manager</li>
+                                        <li class="experience-box__about-job" data-editable-id="j1">Pankayam   |   Full-time</li>
+                                    </ul>
+                                </div>
+                                <div class="experience-box__position-description">
+                                    <ul>
+                                        <li data-editable-id="d1-1">Strategy development and planning of campaigns that promote the business and generate genuine traffic</li>
+                                        <li data-editable-id="d1-2">SEO Content Creation for Blogs, Website, Social media</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="experience-box__job experience-box__job--past">
+                            <div class="experience-box__date-row">
+                                <p class="experience-box__date" data-editable-id="date2">2017 - Present</p>
+                            </div>
+                            <div class="experience-box__position-row">
+                                <div class="experience-box__position-info">
+                                    <ul>
+                                        <li class="experience-box__position" data-editable-id="pos2">Graphic / Web designer</li>
+                                        <li class="experience-box__about-job" data-editable-id="j2">Freelance</li>
+                                    </ul>
+                                </div>
+                                <div class="experience-box__position-description">
+                                    <ul>
+                                        <li data-editable-id="d2-1">Development of internal projects from scratch, product design of brands</li>
+                                        <li data-editable-id="d2-2">Landing page, webapps and hybrid apps</li>
+                                        <li data-editable-id="d2-3">Coordinating with outside agencies, art services, web designer, marketing, printers, and colleagues as necessary.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="experience-box__job experience-box__job--past">
+                            <div class="experience-box__date-row">
+                                <p class="experience-box__date" data-editable-id="date3">Sep. 2021 - Jun. 2023</p>
+                            </div>
+                            <div class="experience-box__position-row">
+                                <div class="experience-box__position-info">
+                                    <ul>
+                                        <li class="experience-box__position" data-editable-id="pos3">Legal Assistant</li>
+                                        <li class="experience-box__about-job" data-editable-id="j3">Law Firm   |   Intern</li>
+                                    </ul>
+                                </div>
+                                <div class="experience-box__position-description">
+                                    <ul>
+                                        <li data-editable-id="d3-1">Provide administrative support to lawyer and enhance office effectiveness</li>
+                                        <li data-editable-id="d3-2">Handle communication with clients, witnesses etc.</li>
+                                        <li data-editable-id="d3-3">Prepare case briefs and summarize depositions, interrogatories and testimony</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card tools-box">
+                    <p class="title" data-editable-id="title3">Tools</p>
+                    <div class="tools-box__card-container">
+                        <div class="tools-box__card">
+                            <div class="tools-box__profile" data-editable-id="tools-profile-1">design</div>
+                            <div class="tools-box__icon-block">
+                                <div class="tools-box__icon-row">
+                                    <img src="icons/logoFigma.svg" alt="Figma icon" class="icon">
+                                    <img passageway src="icons/logoAdobePhotoshop.svg" alt="Photoshop icon" class="icon">
+                                </div>
+                                <div class="tools-box__icon-row">
+                                    <img src="icons/logoAdobeIllustrator.svg" alt="Figma icon" class="icon">
+                                    <img src="icons/logoAdobePremiere.svg" alt="Photoshop icon" class="icon">
+                                </div>
+                                <div class="tools-box__icon-row">
+                                    <img src="icons/logoNotion.svg" alt="Figma icon" class="icon">
+                                    <img src="icons/logoMeet.svg" alt="Photoshop icon" class="icon">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tools-box__card">
+                            <div class="tools-box__profile" data-editable-id="tools-profile-2">no-code</div>
+                            <div class="tools-box__icon-block">
+                                <div class="tools-box__icon-row">
+                                    <img src="icons/logoZapìer.svg" alt="Figma icon" class="icon">
+                                    <img src="icons/logoWebflow.svg" alt="Photoshop icon" class="icon">
+                                </div>
+                                <div class="tools-box__icon-row">
+                                    <img src="icons/logoFramer.svg" alt="Figma icon" class="icon">
+                                    <img src="icons/logoWordpress.svg" alt="Photoshop icon" class="icon">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tools-box__card">
+                            <div class="tools-box__profile" data-editable-id="tools-profile-3">artificial intelligence</div>
+                            <div class="tools-box__icon-block">
+                                <div class="tools-box__icon-row">
+                                    <img src="icons/logoChatGPT.svg" alt="Figma icon" class="icon">
+                                    <img src="icons/logoCopilot.svg" alt="Photoshop icon" class="icon">
+                                </div>
+                                <div class="tools-box__icon-row">
+                                    <img src="icons/logoMidjourney.svg" alt="Figma icon" class="icon">
+                                    <span class="tools-box__placeholder"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="row third-row">
+                <div class="card education-box">
+                    <p class="title" data-editable-id="title4">Education</p>
+                    <div class="education-box__cards-field">
+                        <div class="education-box__card-row">
+                            <div class="education-box__card education-box__card--last">
+                                <div class="education-box__year-row">
+                                    <p class="education-box__date" data-editable-id="education-date-1">2023</p>
+                                    <img src="icons/heart.svg" alt="" class="heart">
+                                </div>
+                                <div class="education-box__name" data-editable-id="education-name-1">UI/UX</div>
+                                <div class="education-box__info education-box__info--last" data-editable-id="education-info-1">#UX #UI #research #DesignSystem #Ui #wireframing #figma #Ux</div>
+                                <div class="education-box__place" data-editable-id="education-place-1">Coursera</div>
+                            </div>
+                            <div class="education-box__card">
+                                <div class="education-box__year-row">
+                                    <p class="education-box__date" data-editable-id="education-date-2">2017 - 2022</p>
+                                </div>
+                                <div class="education-box__name" data-editable-id="education-name-2">Law</div>
+                                <div class="education-box__info" data-editable-id="education-info-2">#law #legalStudies #contracts #internationalLaws</div>
+                                <div class="education-box__place" data-editable-id="education-place-2">University of Kerala</div>
+                            </div>
+                        </div>
+                        <div class="education-box__card-row">
+                            <div class="education-box__card">
+                                <div class="education-box__year-row">
+                                    <p class="education-box__date" data-editable-id="education-date-3">2017</p>
+                                </div>
+                                <div class="education-box__name" data-editable-id="education-name-3">Graphic design</div>
+                                <div class="education-box__info" data-editable-id="education-info-3">#branding #web #illustration #adobe</div>
+                                <div class="education-box__place" data-editable-id="education-place-3">Coursrea</div>
+                            </div>
+                            <div class="education-box__card education-box__card--last-hidden"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="interest-info-box">
+                    <div class="card interest-box">
+                        <p class="title" data-editable-id="title5">Interests</p>
+                        <div class="interest-box__block">
+                            <div class="interest-box__card" data-editable-id="interest-1">branding</div>
+                            <div class="interest-box__card" data-editable-id="interest-2">design</div>
+                            <div class="interest-box__card" data-editable-id="interest-3">photography</div>
+                            <div class="interest-box__card" data-editable-id="interest-4">artificial intelligence</div>
+                            <div class="interest-box__card" data-editable-id="interest-5">illustration</div>
+                            <div class="interest-box__card" data-editable-id="interest-6">typography</div>
+                            <div class="interest-box__card" data-editable-id="interest-7">social networks</div>
+                            <div class="interest-box__card" data-editable-id="interest-8">research</div>
+                            <div class="interest-box__card" data-editable-id="interest-9">dron pilot</div>
+                            <div class="interest-box__card" data-editable-id="interest-10">games</div>
+                        </div>
+                    </div>
+                    <div class="card info-box">
+                        <p class="title" data-editable-id="title6">Let´s chat! I´m ready to work on exciting projects</p>
+                        <p class="info-box__email" data-editable-id="email">srkarthik.designscape@gmail.com</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <section class="btn-section">     
+            <button id="saveBtn" onclick="generatePDF()" class="btn-section__save-btn">Save CV as PDF</button>
+        </section>
+    </main>
   </body>
 </html>

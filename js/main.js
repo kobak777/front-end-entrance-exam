@@ -1,24 +1,41 @@
-import '../css/style.css'
-import javascriptLogo from '../javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+document.addEventListener("DOMContentLoaded", () => {
+  const resume = document.querySelector("#resume");
+  const editableElements = resume.querySelectorAll("[data-editable-id]");
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+  editableElements.forEach((el) => {
+    const id = el.getAttribute("data-editable-id");
+    const saved = localStorage.getItem(`editable_${id}`);
+    if (saved !== null) {
+      el.textContent = saved;
+    }
+  });
 
-setupCounter(document.querySelector('#counter'))
+  editableElements.forEach((el) => {
+    el.setAttribute("contenteditable", "true");
+
+    el.addEventListener("input", () => {
+      const id = el.getAttribute("data-editable-id");
+      localStorage.setItem(`editable_${id}`, el.textContent);
+
+      el.classList.remove("animated-change");
+      void el.offsetWidth;
+      el.classList.add("animated-change");
+    });
+
+    el.addEventListener("animationend", () => {
+      el.classList.remove("animated-change");
+    });
+  });
+
+  window.generatePDF = function () {
+    const resume = document.getElementById("resume");
+    const opt = {
+      margin: 0.5,
+      filename: "resume.pdf",
+      image: { type: "jpeg", quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
+    };
+    html2pdf().from(resume).set(opt).save();
+  };
+});
