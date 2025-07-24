@@ -29,13 +29,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.generatePDF = function () {
     const resume = document.getElementById("resume");
+
     const opt = {
       margin: 0.5,
       filename: "resume.pdf",
-      image: { type: "jpeg", quality: 0.98 },
-      html2canvas: { scale: 2 },
-      jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
+      image: { type: "jpeg", quality: 1 },
+      html2canvas: { scale: 3, useCORS: true },
+      jsPDF: { unit: "in", format: "a4", orientation: "portrait" },
     };
+
     html2pdf().from(resume).set(opt).save();
   };
 });
